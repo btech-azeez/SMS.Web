@@ -1,0 +1,30 @@
+﻿@model SMS.Web.Models.UserModel
+
+@{
+    ViewBag.Title = "User Details";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">User Details</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <p><strong>First Name:</strong> @Html.DisplayFor(model => model.FirstName)</p>
+                    <p><strong>Last Name:</strong> @Html.DisplayFor(model => model.LastName)</p>
+                    <p><strong>Email:</strong> @Html.DisplayFor(model => model.Email)</p>
+                    <p><strong>Password:</strong> @Html.DisplayFor(model => model.Password)</p>
+                </div>
+                <div class="col-md-8">
+                    <p><strong>Gender:</strong> @Html.DisplayFor(model => model.Gender)</p>
+                    <p><strong>Is Deleted:</strong> @Html.DisplayFor(model => model.IsDeleted)</p>
+                    <p><strong>Created On:</strong> @Html.DisplayFor(model => model.CreatedOn)</p>
+                </div>
+            </div>
+            <div class="mt-4">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Back to List", "GetUsers", null, new { @class = "btn btn-secondary" })
+            </div>
+        </div>
+    </div>
+</div>

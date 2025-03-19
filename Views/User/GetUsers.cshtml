@@ -1,0 +1,28 @@
+﻿@model SMS.Web.Models.PaginationModel
+
+@{
+    ViewBag.Title = "Users List";
+}
+
+<h2>Users List</h2>
+<p>
+    @Html.ActionLink("New User", "SignUp", "User")
+</p>
+
+<div class="container">
+    <form method="get" class="form-horizontal" action="@Url.Action("GetUsers", "User")">
+        <div class="form-group">
+            <input type="text" name="searchTerm" class="form-control" placeholder="Search..." value="@ViewBag.CurrentFilter" />
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+
+@Html.Partial("_GetUsers", Model)
+
+<style>
+    .disabled-link {
+        pointer-events: none; /* Prevents clicking */
+        color: red; /* Optional: Change color to indicate disabled state */
+    }
+</style>
